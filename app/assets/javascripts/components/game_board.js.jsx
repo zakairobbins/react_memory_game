@@ -1,8 +1,25 @@
 var GameBoard = React.createClass({
   render: function() {
     return(
-      <div className="card">
-        <Card picture={this.props.picture} />
+      <div className="board">
+        <div className="row">
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+        </div>
+        <div className="row">
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+        </div>
+        <div className="row">
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+          <Card picture={this.props.pictures} />
+        </div>
       </div>
     );
   }
