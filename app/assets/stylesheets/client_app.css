@@ -15,9 +15,11 @@ body {
 }
 
 .cardPic{
+  margin-top: .5em;
   margin-left: 2em;
   margin-right: 2em;
   height: 13em;
   width:  9em;
-  border-radius: 5px;
+  border-radius: 6px;
+  box-shadow: 2px 3px 11px 0px #66E;
 }

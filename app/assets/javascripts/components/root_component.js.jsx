@@ -1,9 +1,7 @@
-var back = "assets/jlalogo.JPG";
-
 var RootComponent = React.createClass({
   render: function() {
     return(
-        <GameBoard pictures={pictures} back={back}/>
+        <GameBoard pictures={ALL_PICTURES} backImage={BACK_IMAGE}/>
     );
   }
 });
