@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a card matching memory game I made over a weekend in React. The purpose of this project was to test my ability to teach myself a new technology. The goals were to develop a learning process, break down the process of approaching React into manageable chunks, and create an application that incorporates what I learned.
 
-Things you may want to cover:
+The goals for the application were to create a "game board" that would display a deck of "cards" face down. Cards would be dynamically assigned images in a different order at the start of each game. The user would be able to flip cards over, one at a time and search for a matching pair of images on the reverse side of the cards. The game would keep track of when a match was found, how many cards were turned over, and a user's score. Win conditions would be based on if a player found all the matching pairs of cards within a set time limit or number of turns.
 
-* Ruby version
+Videos explaining the application and what I learned can be found here:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+part 1: https://youtu.be/GGKH67PGzvA
+part 2: https://youtu.be/_TjZ7VQD5HQ
