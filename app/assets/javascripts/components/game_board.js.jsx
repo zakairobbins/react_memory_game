@@ -1,35 +1,23 @@
 var GameBoard = React.createClass({
 
   propTypes: {
-    pictures: React.PropTypes.array.isRequired,
-    backImage: React.PropTypes.string.isRequired
+    backImage: React.PropTypes.string.isRequired,
+    pictures:  React.PropTypes.array.isRequired
   },
 
-  getInitialState: function() {
-    var shuffled = this.shuffle(this.props.pictures.slice(0));
-    return {
-      flipCount: 0,
-      deck: shuffled
-    };
+  rerender: function(){
+    this.forceUpdate();
   },
 
-  shuffle: function(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex ;
+  getInitialState: function(){
+    var model = new GameModel(this.props.pictures, this.rerender.bind(this))
+    return {model: model};
+  },
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
+  handleClick: function(cardId){
+    console.log("You Clicked", cardId);
+    this.state.model.flip(cardId);
+    this.setState({ model: this.state.model });
   },
 
   render: function() {
@@ -37,10 +25,15 @@ var GameBoard = React.createClass({
     return(
       <div className="board">
         <div className="row">
-          { this.state.deck.map(function(card, i){
+          { that.state.model.deck().map(function(card, i){
                 return (
-              <Card key={i} front={card} back={that.props.backImage} clickHandler={that.handleClick.bind(that, i)}/>
-                  );
+              <Card
+                key={card.id()}
+                frontImage={card.image()}
+                backImage={that.props.backImage}
+                flipped={card.flipped()}
+                className={card.flipped() ? 'show-front' : 'show-back'}
+                clickHandler={that.handleClick.bind(that, card.id())}/>);
             }) }
         </div>
       </div>
